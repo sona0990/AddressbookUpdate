@@ -15,7 +15,7 @@ public class Addressbook {
 		System.setProperty("webdriver.chrome.driver","C:\\Users\\Divya\\Downloads\\Eclipse\\Eclipse\\Jars\\chromedriver.exe");
 			WebDriver driver = new ChromeDriver();
 			driver.manage().timeouts().implicitlyWait(5, TimeUnit.SECONDS);
-			driver.get("http://localhost:8090/addressbook/");
+			driver.get("http://52.202.253.62:8080/addressbook/");
 			driver.findElement(By.xpath("//div[@class = 'v-button v-widget']")).click();
 			driver.findElement(By.id("gwt-uid-5")).sendKeys("Ravi");
 			driver.findElement(By.id("gwt-uid-7")).sendKeys("Training");
