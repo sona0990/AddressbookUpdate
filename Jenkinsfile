@@ -7,8 +7,11 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                
-                sh "'${maven}/bin/mvn' -Dmaven.test.skip=true clean package"
+                script{
+                env.Java_HOME= tool name: 'myjdk', type: 'jdk'
+                def mvnhome = tool name: 'mymaven', type: 'maven'
+                sh "'${mvnhome}/bin/mvn' package"
+                }
             }
         }
     }
